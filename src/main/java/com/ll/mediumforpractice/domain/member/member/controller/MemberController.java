@@ -1,5 +1,7 @@
 package com.ll.mediumforpractice.domain.member.member.controller;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -20,12 +22,14 @@ public class MemberController {
     @Getter
     @Setter
     public static class JoinForm {
+        @NotBlank
         public String username;
+        @NotBlank
         public String password;
     }
 
     @PostMapping("/join")
-    public String join(JoinForm joinForm) {
+    public String signup(@Valid JoinForm joinForm) {
         return "redirect:/";
     }
 }
