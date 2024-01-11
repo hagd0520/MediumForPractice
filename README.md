@@ -4,7 +4,8 @@
 
 - [x] GET /member/join : 가입 폼
 - [x] POST /member/join : 가입 폼 처리
-- [ ] GET /member/login : 로그인 폼
+- [x] GET /member/login : 로그인 폼
+- [ ] POST /member/login : 로그인 폼 처리
 
 ### Commit message
 1. 제목과 본문을 한 줄 띄어 구분
