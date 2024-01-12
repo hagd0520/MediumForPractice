@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 
+import java.util.stream.IntStream;
+
 @Configuration
 @Slf4j
 @RequiredArgsConstructor
@@ -36,6 +38,10 @@ public class NotProd {
 
             postService.write(memberUser2, "제목 5", "내용 5", true);
             postService.write(memberUser2, "제목 6", "내용 6", false);
+
+            IntStream.rangeClosed(7, 50).forEach(i -> {
+                postService.write(memberUser3, "제목 " + i, "내용 " + i, true);
+            });
         };
     }
 }
