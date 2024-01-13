@@ -1,6 +1,7 @@
 package com.ll.mediumforpractice.global.rq;
 
 import com.ll.mediumforpractice.global.rsData.RsData;
+import com.ll.mediumforpractice.standard.util.Ut;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -78,5 +79,17 @@ public class Rq {
 
     public void attr(String key, Object value) {
         request.setAttribute(key, value);
+    }
+
+    public String getCurrentQueryStringWithoutParam(String paramName) {
+        String queryString = request.getQueryString();
+
+        if (queryString == null) {
+            return "";
+        }
+
+        queryString = Ut.url.deleteQueryParam(queryString, paramName);
+
+        return queryString;
     }
 }
