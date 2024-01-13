@@ -6,12 +6,13 @@
 - [x] POST /member/join : 가입 폼 처리
 - [x] GET /member/login : 로그인 폼
 - [x] POST /member/login : 로그인 폼 처리
-- 
+- [x] POST /member/logout : 로그아웃
+
 ## 글 작업
 
 - [x] GET / : 홈
     - 최신글 30개 노출
-- [] GET /post/list : 전체 글 리스트
+- [x] GET /post/list : 전체 글 리스트
     - 공개된 글만 노출
 - [ ] GET /post/myList : 내 글 리스트
     - 내 글 목록 조회
