@@ -18,6 +18,7 @@ import java.util.Optional;
 public class PostService {
     private final PostRepository postRepository;
 
+    @Transactional
     public Post write(Member author, String title, String body, boolean isPublished) {
         Post post = Post.builder()
                 .author(author)
