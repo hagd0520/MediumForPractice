@@ -1,7 +1,14 @@
 <!doctype html>
-<html layout:decorate="~{global/layout}"></html>
-<head layout:fragment="header">
-    <title th:text="|${@appConfig.siteName}|"></title>
+<html layout:decorate="~{global/layout}">
+
+<head>
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE" th:text="${@appConfig.siteName}"></title>
+</head>
+
+<body>
+
+<header layout:fragment="header">
+    <h1 th:text="|${@appConfig.siteName}|"></h1>
 
     <a href="/">홈</a>
     <a href="/post/list">글 목록</a>
@@ -9,7 +16,8 @@
     <a th:if="${@rq.logout}" href="/member/login">로그인</a>
     <a th:if="${@rq.logout}" href="/member/join">회원가입</a>
     <a th:if="${@rq.login}" href="/member/logout">로그아웃</a>
-</head>
-<body>
+</header>
+
 </body>
+
 </html>
