@@ -27,7 +27,7 @@
 
 - [x] GET /b/user1 : 회원 user1 의 전체 글 리스트
     - 특정 회원의 글 모아보기
-- [ ] GET /b/user1/3 : 회원 user1 의 글 중에서 3번글 상세보기
+- [x] GET /b/user1/3 : 회원 user1 의 글 중에서 3번글 상세보기
 
 ### Commit message
 1. 제목과 본문을 한 줄 띄어 구분
