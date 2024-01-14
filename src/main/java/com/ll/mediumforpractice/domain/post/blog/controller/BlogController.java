@@ -47,4 +47,17 @@ public class BlogController {
 
         return "domain/post/blog/list";
     }
+
+    @GetMapping("/{username}/{id}")
+    public String showDetail(
+            @PathVariable String username,
+            @PathVariable long id
+    ) {
+        memberService.findByUsername(username).orElseThrow(() -> new GlobalException("404-1", "존재하지 않는 사용자입니다."));
+        Post post = postService.findById(id).orElseThrow(() -> new GlobalException("404-2", "존재하지 않는 글입니다."));
+
+        rq.attr("post", post);
+
+        return "domain/post/post/detail";
+    }
 }
